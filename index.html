@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cooperative Landing Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: lightgreen;
+            margin: 0;
+            padding: 0;
+            color: black;
+            overflow-x: hidden;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: transparent;
+            position: absolute;
+            width: 100%;
+            top: 0;
+            left: 0;
+        }
+        .header img {
+            height: 40px;
+            margin-right: 10px;
+        }
+        .header a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .hero {
+            text-align: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../hope/images/christina-wocintechchat-com-ftCWdZOFZqo-unsplash.jpg') center/cover no-repeat;
+            color: white;
+            transition: transform 0.5s ease-in-out;
+        }
+        .about {
+            height: 100vh;
+            padding: 50px;
+            background-color: white;
+            box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.1);
+            transform: translateY(100vh);
+            transition: transform 0.5s ease-in-out;
+        }
+        .services, .membership {
+            padding: 50px;
+            background-color: offwhite;
+        }
+        .footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .form-container {
+            display: flex;
+            flex-direction: column;
+            max-width: 400px;
+            margin: auto;
+        }
+        .form-container input, .form-container button {
+            margin: 10px 0;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div>
+            <img src="logo.png" alt="Cooperative Logo">
+            <h2>Cooperative Name</h2>
+        </div>
+        <a href="#membership">Become a Member</a>
+    </header>
+    
+    <section class="hero" id="hero">
+        <h1>Welcome to Our Cooperative</h1>
+        <p>Providing loans and financial facilities to our members.</p>
+    </section>
+    
+    <section class="about" id="about">
+        <h2>About Us</h2>
+        <p>We are a cooperative dedicated to helping members achieve financial stability.</p>
+    </section>
+    
+    <section class="services">
+        <h2>Our Services</h2>
+        <p>We offer various types of loans and financial support to our members.</p>
+    </section>
+    
+    <section id="membership" class="membership">
+        <h2>Become a Member</h2>
+        <p>Join us today and start benefiting from our cooperative services.</p>
+        <form id="contact-form" class="form-container">
+            <input type="email" id="email" placeholder="Enter your email" required>
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+    
+    <footer class="footer">
+        <p>&copy; 2025 Cooperative. All rights reserved.</p>
+    </footer>
+    
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', async function(event) {
+            event.preventDefault();
+            const email = document.getElementById('email').value;
+            
+            const response = await fetch('/submit', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email })
+            });
+            
+            const result = await response.json();
+            alert(result.message);
+        });
+    </script>
+    
+    <script>
+        window.addEventListener('scroll', function() {
+            const hero = document.getElementById('hero');
+            const about = document.getElementById('about');
+            if (window.scrollY > window.innerHeight * 0.05) {
+                about.style.transform = 'translateY(0)';
+            } else {
+                about.style.transform = 'translateY(100vh)';
+            }
+        });
+    </script>
+</body>
+</html>
