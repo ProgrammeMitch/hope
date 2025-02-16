@@ -7,7 +7,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: lightgreen;
+            background-color: white;
             margin: 0;
             padding: 0;
             color: black;
@@ -46,31 +46,97 @@
         }
         .about {
             height: 100vh;
+            display: flex;
             padding: 50px;
             background-color: white;
             box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.1);
-            transform: translateY(100vh);
             transition: transform 0.5s ease-in-out;
         }
-        .services, .membership {
-            padding: 50px;
-            background-color: offwhite;
-        }
-        .footer {
-            background-color: black;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
-        .form-container {
+        .about-left {
+            width: 35%;
             display: flex;
             flex-direction: column;
-            max-width: 400px;
-            margin: auto;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
         }
-        .form-container input, .form-container button {
-            margin: 10px 0;
+        .about-left img {
+            width: 80%;
+            border-radius: 10px;
+        }
+        .about-right {
+            width: 65%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+        .carousel {
+            display: flex;
+            overflow: hidden;
+            width: 100%;
+            height: 250px;
+            position: relative;
+        }
+        .carousel-track {
+            display: flex;
+            width: 800%;
+            animation: slide 10s infinite linear;
+        }
+        .carousel img {
+            width: 50%;
+            border-radius: 10px 10px 10px 10px;
+            margin-right: 10%;
+        }
+        @keyframes slide {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+        .team-section {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .team-carousel {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .team-card {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: opacity 0.5s;
+        }
+        .team-card.active {
+            display: flex;
+        }
+        .team-card img {
+            width: 150px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+        .team-btn {
+            background-color: black;
+            color: white;
+            border: none;
             padding: 10px;
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .team-info {
+            align-items: center; justify-items: center; width: 70%;
+        }
+        .prev {
+            left: 10px;
+        }
+        .next {
+            right: 10px;
         }
     </style>
 </head>
@@ -89,8 +155,40 @@
     </section>
     
     <section class="about" id="about">
-        <h2>About Us</h2>
-        <p>We are a cooperative dedicated to helping members achieve financial stability.</p>
+        <div class="about-left">
+            <img style="box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.1);" src="../hope/images/laura-chouette-92z4a5V7y4I-unsplash.jpg" alt="Founder">
+            <p>Our founder has a vision to uplift members through financial empowerment.</p>
+        </div>
+        <div class="about-right">
+            <div class="carousel">
+                <div class="carousel-track">
+                    <img src="../hope/images/aiony-haust-3TLl_97HNJo-unsplash.jpg" alt="Staff 1">
+                    <img src="../hope/images/jurica-koletic-7YVZYZeITc8-unsplash.jpg" alt="Staff 2">
+                    <img src="../hope/images/aiony-haust-3TLl_97HNJo-unsplash.jpg" alt="Staff 3">
+                    <img src="../hope/images/jurica-koletic-7YVZYZeITc8-unsplash.jpg" alt="Staff 4">
+                    <img src="../hope/images/aiony-haust-3TLl_97HNJo-unsplash.jpg" alt="Staff 5">
+                    <img src="../hope/images/jurica-koletic-7YVZYZeITc8-unsplash.jpg" alt="Staff 6">
+                    <img src="../hope/images/aiony-haust-3TLl_97HNJo-unsplash.jpg" alt="Staff 7">
+                    <img src="../hope/images/jurica-koletic-7YVZYZeITc8-unsplash.jpg" alt="Staff 8">
+                </div>
+            </div>
+            <div class="team-section">
+                <h3>Meet the Team</h3>
+                <div class="team-carousel">
+                    <button class="team-btn prev" onclick="prevTeam()">&#10094;</button>
+                    <div class="team-card active">
+                        <img src="../hope/images/jurica-koletic-7YVZYZeITc8-unsplash.jpg" alt="Team Member 1">
+                        <p class="team-info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio exercitationem fuga et assumenda deleniti repellendus nihil quis tenetur voluptatem. Suscipit saepe perferendis repellendus earum placeat ipsa minima adipisci consequuntur ipsam!</p>
+                    </div>
+                    <div class="team-card">
+                        <img src="../hope/images/aiony-haust-3TLl_97HNJo-unsplash.jpg" alt="Team Member 2">
+                        <p>Jane Smith - Operations Head</p>
+                        <p class="team-info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio exercitationem fuga et assumenda deleniti repellendus nihil quis tenetur voluptatem. Suscipit saepe perferendis repellendus earum placeat ipsa minima adipisci consequuntur ipsam!</p>
+                    </div>
+                    <button class="team-btn next" onclick="nextTeam()">&#10095;</button>
+                </div>
+            </div>
+        </div>
     </section>
     
     <section class="services">
@@ -110,28 +208,30 @@
     <footer class="footer">
         <p>&copy; 2025 Cooperative. All rights reserved.</p>
     </footer>
-    
     <script>
-        document.getElementById('contact-form').addEventListener('submit', async function(event) {
-            event.preventDefault();
-            const email = document.getElementById('email').value;
-            
-            const response = await fetch('/submit', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ email })
+        let currentTeam = 0;
+        function showTeam(index) {
+            let teams = document.querySelectorAll(".team-card");
+            teams.forEach((team, i) => {
+                team.classList.remove("active");
+                if (i === index) {
+                    team.classList.add("active");
+                }
             });
-            
-            const result = await response.json();
-            alert(result.message);
-        });
-    </script>
-    
-    <script>
+        }
+        function prevTeam() {
+            currentTeam = (currentTeam === 0) ? 1 : 0;
+            showTeam(currentTeam);
+        }
+        function nextTeam() {
+            currentTeam = (currentTeam === 1) ? 0 : 1;
+            showTeam(currentTeam);
+        }
+
         window.addEventListener('scroll', function() {
             const hero = document.getElementById('hero');
             const about = document.getElementById('about');
-            if (window.scrollY > window.innerHeight * 0.05) {
+            if (window.scrollY > window.innerHeight * 0.1) {
                 about.style.transform = 'translateY(0)';
             } else {
                 about.style.transform = 'translateY(100vh)';
