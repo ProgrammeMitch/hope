@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,6 +14,7 @@
             color: black;
             overflow-x: hidden;
         }
+
         .header {
             display: flex;
             justify-content: space-between;
@@ -24,16 +26,19 @@
             top: 0;
             left: 0;
         }
+
         .header img {
             height: 40px;
             margin-right: 10px;
         }
+
         .header a {
             text-decoration: none;
             color: black;
             font-weight: bold;
             font-size: 14px;
         }
+
         .hero {
             text-align: center;
             height: 100vh;
@@ -44,14 +49,16 @@
             color: white;
             transition: transform 0.5s ease-in-out;
         }
+
         .about {
             height: 100vh;
             display: flex;
             padding: 50px;
             background-color: white;
-            box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px -5px 10px 2px rgba(0, 0, 0, 0.1);
             transition: transform 0.5s ease-in-out;
         }
+
         .about-left {
             width: 35%;
             display: flex;
@@ -60,10 +67,12 @@
             justify-content: center;
             text-align: center;
         }
+
         .about-left img {
             width: 80%;
             border-radius: 10px;
         }
+
         .about-right {
             width: 65%;
             display: flex;
@@ -72,6 +81,7 @@
             overflow: hidden;
             position: relative;
         }
+
         .carousel {
             display: flex;
             overflow: hidden;
@@ -79,24 +89,34 @@
             height: 250px;
             position: relative;
         }
+
         .carousel-track {
             display: flex;
             width: 800%;
             animation: slide 10s infinite linear;
         }
+
         .carousel img {
             width: 50%;
             border-radius: 10px 10px 10px 10px;
             margin-right: 10%;
         }
+
         @keyframes slide {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-100%); }
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
         }
+
         .team-section {
             margin-top: 20px;
             text-align: center;
         }
+
         .team-carousel {
             display: flex;
             align-items: center;
@@ -104,6 +124,7 @@
             position: relative;
             overflow: hidden;
         }
+
         .team-card {
             display: none;
             flex-direction: column;
@@ -111,14 +132,17 @@
             text-align: center;
             transition: opacity 0.5s;
         }
+
         .team-card.active {
             display: flex;
         }
+
         .team-card img {
             width: 150px;
             border-radius: 50%;
             margin-bottom: 10px;
         }
+
         .team-btn {
             background-color: black;
             color: white;
@@ -129,34 +153,215 @@
             top: 50%;
             transform: translateY(-50%);
         }
+
         .team-info {
-            align-items: center; justify-items: center; width: 70%;
+            align-items: center;
+            justify-items: center;
+            width: 70%;
         }
+
         .prev {
             left: 10px;
         }
+
         .next {
             right: 10px;
         }
+
+        .services {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            padding: 50px;
+            background-color: white;
+            opacity: 0;
+            transform: translateX(100%);
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+        }
+
+        .service-card {
+            display: flex;
+            align-items: center;
+            background: white;
+            margin-left: 15%;
+            margin-bottom: 5%;
+            padding: 20px;
+            width: 70%;
+            border-radius: 10px;
+            /*box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);*/
+            transform: translateX(100%);
+            opacity: 0;
+            transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+        }
+
+        .service-card img {
+            max-width: 50%;
+            max-height: 180%;
+            margin-right: 20px;
+            border-radius: 10px;
+            box-shadow: 1px 1px 1px 1px;
+        }
+
+        /*.membership {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../hope/images/laura-chouette-92z4a5V7y4I-unsplash.jpg') center/cover no-repeat;
+            color: white;
+            text-align: center;
+            padding: 50px;
+        }*/
+
+        .footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .subscribe-box {
+            align-items: center;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../hope/images/laura-chouette-92z4a5V7y4I-unsplash.jpg') center/cover no-repeat;
+            color: white;
+            font-family: 'Gothic A1', serif;
+            padding: 6em 0;
+            text-align: center;
+            box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 5);
+
+            h2 {
+                margin: 0 0 .85em 0;
+                font-weight: 100;
+                font-size: 30px;
+                font-family: 'Marcellus', serif;
+            }
+
+            .subscribe {
+                width: 100%;
+                max-width: 600px;
+                margin: auto;
+
+                input {
+                    width: 100%;
+                    background: transparent;
+                    border: 0;
+                    border-bottom: 1px solid;
+                    padding: 1em 0 .8em;
+                    text-align: center;
+                    font-size: 18px;
+                    font-family: inherit;
+                    font-weight: 300;
+                    line-height: 1.5;
+                    color: inherit;
+                    outline: none;
+
+                    &::placeholder {
+                        color: hsla(0, 0%, 100%, 0.5);
+                    }
+                }
+
+                button {
+                    all: unset;
+                    margin-top: 2.4em;
+                    background: transparent;
+                    border: 2px solid white;
+                    padding: 1em 4em;
+                    border-radius: 50px;
+                    cursor: pointer;
+                    display: inline-block;
+                    font-weight: 700;
+                    position: relative;
+                    transition: all 300ms ease;
+
+                    span {
+                        display: inline-block;
+                        transition: all 300ms ease;
+                        z-index: 2;
+                    }
+
+                    &:before,
+                    &:after {
+                        content: "";
+                        display: block;
+                        position: absolute;
+                        transition: all 300ms ease;
+                        opacity: 0;
+                    }
+
+                    &:before {
+                        height: 7px;
+                        width: 7px;
+                        background: transparent;
+                        border-right: 2px solid;
+                        border-top: 2px solid;
+                        right: 30px;
+                        top: 21px;
+                        transform: rotate(45deg);
+                    }
+
+                    &:after {
+                        background: white;
+                        height: 2px;
+                        width: 50px;
+                        left: 0;
+                        top: 1.49em;
+                        z-index: 1;
+                    }
+
+                    &:hover {
+                        span {
+                            transform: translateX(-10px);
+                        }
+
+                        &:before {
+                            opacity: 1;
+                        }
+
+                        &:after {
+                            width: 14px;
+                            opacity: 1;
+                            transform: translateX(160px);
+                        }
+                    }
+                }
+            }
+
+        }
+
+        .form-container {
+            display: flex;
+            flex-direction: column;
+            max-width: 400px;
+            margin: auto;
+        }
+
+        .form-container input,
+        .form-container button {
+            margin: 10px 0;
+            padding: 10px;
+        }
     </style>
 </head>
+
 <body>
     <header class="header">
         <div>
             <img src="logo.png" alt="Cooperative Logo">
             <h2>Cooperative Name</h2>
         </div>
-        <a href="#membership">Become a Member</a>
+        <a style="margin-right: 3%; margin-top: 3%;" href="#membership">Become a Member</a>
     </header>
-    
+
     <section class="hero" id="hero">
         <h1>Welcome to Our Cooperative</h1>
         <p>Providing loans and financial facilities to our members.</p>
     </section>
-    
+
     <section class="about" id="about">
         <div class="about-left">
-            <img style="box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.1);" src="../hope/images/laura-chouette-92z4a5V7y4I-unsplash.jpg" alt="Founder">
+            <img style="box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.1);"
+                src="../hope/images/laura-chouette-92z4a5V7y4I-unsplash.jpg" alt="Founder">
             <p>Our founder has a vision to uplift members through financial empowerment.</p>
         </div>
         <div class="about-right">
@@ -173,38 +378,59 @@
                 </div>
             </div>
             <div class="team-section">
-                <h3>Meet the Team</h3>
+                <h2>Meet the Team</h2>
                 <div class="team-carousel">
                     <button class="team-btn prev" onclick="prevTeam()">&#10094;</button>
                     <div class="team-card active">
                         <img src="../hope/images/jurica-koletic-7YVZYZeITc8-unsplash.jpg" alt="Team Member 1">
-                        <p class="team-info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio exercitationem fuga et assumenda deleniti repellendus nihil quis tenetur voluptatem. Suscipit saepe perferendis repellendus earum placeat ipsa minima adipisci consequuntur ipsam!</p>
+                        <p class="team-info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio
+                            exercitationem fuga et assumenda deleniti repellendus nihil quis tenetur voluptatem.
+                            Suscipit saepe perferendis repellendus earum placeat ipsa minima adipisci consequuntur
+                            ipsam!</p>
                     </div>
                     <div class="team-card">
                         <img src="../hope/images/aiony-haust-3TLl_97HNJo-unsplash.jpg" alt="Team Member 2">
                         <p>Jane Smith - Operations Head</p>
-                        <p class="team-info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio exercitationem fuga et assumenda deleniti repellendus nihil quis tenetur voluptatem. Suscipit saepe perferendis repellendus earum placeat ipsa minima adipisci consequuntur ipsam!</p>
+                        <p class="team-info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio
+                            exercitationem fuga et assumenda deleniti repellendus nihil quis tenetur voluptatem.
+                            Suscipit saepe perferendis repellendus earum placeat ipsa minima adipisci consequuntur
+                            ipsam!</p>
                     </div>
                     <button class="team-btn next" onclick="nextTeam()">&#10095;</button>
                 </div>
             </div>
         </div>
     </section>
-    
-    <section class="services">
-        <h2>Our Services</h2>
-        <p>We offer various types of loans and financial support to our members.</p>
+    <h2 style="align-items: center; justify-self: center;">Our Services</h2>
+    <section class="services" id="services">
+
+        <div class="service-card">
+            <img src="../hope/images/sunday-abegunde-C8N-j4ZmZBU-unsplash.jpg" alt="Service 1">
+            <p>We offer financial consulting to our members.</p>
+        </div>
+        <div class="service-card">
+            <img src="../hope/images/jacopo-maiarelli--gOUx23DNks-unsplash.jpg" alt="Service 2">
+            <p>Low-interest loans to help you grow financially.</p>
+        </div>
+        <div class="service-card">
+            <img src="../hope/images/jayphen-simpson-8jNATlZXhgk-unsplash.jpg" alt="Service 3">
+            <p>Emergency financial assistance when needed.</p>
+        </div>
+        <div class="service-card">
+            <img src="../hope/images/adeolu-eletu-rFUFqjEKzfY-unsplash.jpg" alt="Service 4">
+            <p>Business grants for startups and entrepreneurs.</p>
+        </div>
     </section>
-    
-    <section id="membership" class="membership">
+
+    <section id="membership" class="subscribe-box ">
         <h2>Become a Member</h2>
         <p>Join us today and start benefiting from our cooperative services.</p>
-        <form id="contact-form" class="form-container">
-            <input type="email" id="email" placeholder="Enter your email" required>
-            <button type="submit">Submit</button>
+        <form id="contact-form" class="subscribe">
+            <input type="email" id="email" placeholder="Enter your email" autocomplete="off" required>
+            <button type="submit"> <span> Submit</span></button>
         </form>
     </section>
-    
+
     <footer class="footer">
         <p>&copy; 2025 Cooperative. All rights reserved.</p>
     </footer>
@@ -228,9 +454,26 @@
             showTeam(currentTeam);
         }
 
-        window.addEventListener('scroll', function() {
+        window.addEventListener('scroll', function () {
             const hero = document.getElementById('hero');
             const about = document.getElementById('about');
+            const servicesSection = document.getElementById("services");
+            const serviceCards = document.querySelectorAll(".service-card");
+            const sectionPosition = servicesSection.getBoundingClientRect().top;
+            const screenPosition = window.innerHeight / 1.3;
+
+            if (sectionPosition < screenPosition) {
+                servicesSection.style.opacity = "1";
+                servicesSection.style.transform = "translateX(0)";
+
+                serviceCards.forEach((card, index) => {
+                    setTimeout(() => {
+                        card.style.transform = "translateX(0)";
+                        card.style.opacity = "1";
+                    }, index * 300);
+                });
+            }
+
             if (window.scrollY > window.innerHeight * 0.1) {
                 about.style.transform = 'translateY(0)';
             } else {
@@ -239,4 +482,5 @@
         });
     </script>
 </body>
+
 </html>
