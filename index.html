@@ -7,8 +7,8 @@
     <title>Cooperative Landing Page</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: white;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: rgba(37, 159, 3, 0.575);
             margin: 0;
             padding: 0;
             color: black;
@@ -20,15 +20,16 @@
             justify-content: space-between;
             align-items: center;
             padding: 10px 20px;
-            background-color: transparent;
-            position: absolute;
+            /**position: absolute;*/
             width: 100%;
+            height: 15rem;
             top: 0;
             left: 0;
+            box-shadow: 0px 5px 6px 2px;
         }
 
         .header img {
-            height: 40px;
+            height: 9rem;
             margin-right: 10px;
         }
 
@@ -347,22 +348,25 @@
 <body>
     <header class="header">
         <div>
-            <img src="logo.png" alt="Cooperative Logo">
-            <h2>Cooperative Name</h2>
+            <img src="../hope/images/sebastian-leon-prado-3ecCnoNQ13o-unsplash.jpg" alt="Cooperative Logo">
+            
         </div>
-        <a style="margin-right: 3%; margin-top: 3%;" href="#membership">Become a Member</a>
+        <h2 style="font-size: 5em;">HOPE MULTI-PURPOSE COOPERATIVE SOCIETY</h2>
+        <a style="margin-right: 3%; margin-top: 3%;" href="#membership">Become a Member Today</a>
     </header>
 
     <section class="hero" id="hero">
-        <h1>Welcome to Our Cooperative</h1>
-        <p>Providing loans and financial facilities to our members.</p>
-    </section>
+        <!--<h1>we aim to <br> Help Other People Excel (HOPE) <br> by providing economic stimulation
+            <br> amongst the less priveleged <br> and hopefully <br> engender self reliance.</h1>-->
+        </section>
 
     <section class="about" id="about">
         <div class="about-left">
             <img style="box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.1);"
                 src="../hope/images/laura-chouette-92z4a5V7y4I-unsplash.jpg" alt="Founder">
-            <p>Our founder has a vision to uplift members through financial empowerment.</p>
+            <h3>Chief Sir Emeka Mbagha, KSM</h3> <br>
+            <p>A founder with a vision to uplift members through financial empowerment, financial literacy and self
+                reliance.</p>
         </div>
         <div class="about-right">
             <div class="carousel">
@@ -383,6 +387,7 @@
                     <button class="team-btn prev" onclick="prevTeam()">&#10094;</button>
                     <div class="team-card active">
                         <img src="../hope/images/jurica-koletic-7YVZYZeITc8-unsplash.jpg" alt="Team Member 1">
+                        <p>Gerard Ekene Ebeem - General Manager</p>
                         <p class="team-info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio
                             exercitationem fuga et assumenda deleniti repellendus nihil quis tenetur voluptatem.
                             Suscipit saepe perferendis repellendus earum placeat ipsa minima adipisci consequuntur
@@ -390,7 +395,7 @@
                     </div>
                     <div class="team-card">
                         <img src="../hope/images/aiony-haust-3TLl_97HNJo-unsplash.jpg" alt="Team Member 2">
-                        <p>Jane Smith - Operations Head</p>
+                        <p>Chinonso Mitchel Mbagha - Operations Head</p>
                         <p class="team-info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio
                             exercitationem fuga et assumenda deleniti repellendus nihil quis tenetur voluptatem.
                             Suscipit saepe perferendis repellendus earum placeat ipsa minima adipisci consequuntur
@@ -406,19 +411,19 @@
 
         <div class="service-card">
             <img src="../hope/images/sunday-abegunde-C8N-j4ZmZBU-unsplash.jpg" alt="Service 1">
-            <p>We offer financial consulting to our members.</p>
+            <p>Thrift and Credit -<br> Low-interest loans to help you grow financially.</p>
         </div>
         <div class="service-card">
             <img src="../hope/images/jacopo-maiarelli--gOUx23DNks-unsplash.jpg" alt="Service 2">
-            <p>Low-interest loans to help you grow financially.</p>
+            <p>Agricultural Value Chain -<br> Business grants for startups and entrepreneurs.</p>
         </div>
         <div class="service-card">
             <img src="../hope/images/jayphen-simpson-8jNATlZXhgk-unsplash.jpg" alt="Service 3">
-            <p>Emergency financial assistance when needed.</p>
+            <p>Lease Financing -<br> Emergency financial assistance when needed.</p>
         </div>
         <div class="service-card">
             <img src="../hope/images/adeolu-eletu-rFUFqjEKzfY-unsplash.jpg" alt="Service 4">
-            <p>Business grants for startups and entrepreneurs.</p>
+            <p>Financial Literacy and Consultancy -<br> We offer financial consulting to our members.</p>
         </div>
     </section>
 
