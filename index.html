@@ -31,6 +31,7 @@
         .header img {
             height: 9rem;
             margin-right: 10px;
+            box-shadow: 0px 0px 3px 1px;
         }
 
         .header a {
@@ -44,11 +45,41 @@
             text-align: center;
             height: 100vh;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../hope/images/christina-wocintechchat-com-ftCWdZOFZqo-unsplash.jpg') center/cover no-repeat;
             color: white;
             transition: transform 0.5s ease-in-out;
+        }
+
+        .hero-content-one {
+            position: relative;
+            font-size: 4em;
+            padding: 10px;
+            color: rgba(137, 238, 109, 0.774);
+            background-color: rgba(0, 0, 0, 0.482);
+            left: 7em;
+        }
+
+        .hero-content-two {
+            position: relative;
+            font-size: 4em;
+            padding: 10px;
+            color: rgba(137, 238, 109, 0.774);
+            background-color: rgba(0, 0, 0, 0.482);
+            left: 6.35em;
+            bottom: 1.999em;
+        }
+
+        .hero-content-three {
+            position: relative;
+            font-size: 4em;
+            padding: 10px;
+            color: rgba(137, 238, 109, 0.774);
+            background-color: rgba(0, 0, 0, 0.482);
+            left: 4.1em;
+            bottom: 4em;
         }
 
         .about {
@@ -349,16 +380,17 @@
     <header class="header">
         <div>
             <img src="../hope/images/sebastian-leon-prado-3ecCnoNQ13o-unsplash.jpg" alt="Cooperative Logo">
-            
+
         </div>
         <h2 style="font-size: 5em;">HOPE MULTI-PURPOSE COOPERATIVE SOCIETY</h2>
         <a style="margin-right: 3%; margin-top: 3%;" href="#membership">Become a Member Today</a>
     </header>
 
     <section class="hero" id="hero">
-        <!--<h1>we aim to <br> Help Other People Excel (HOPE) <br> by providing economic stimulation
-            <br> amongst the less priveleged <br> and hopefully <br> engender self reliance.</h1>-->
-        </section>
+        <h3 class="hero-content-one">Engedering</h3>
+        <h3 class="hero-content-two">Self - Reliance</h3>
+        <h3 class="hero-content-three">Amongst Our Members.</h3>
+    </section>
 
     <section class="about" id="about">
         <div class="about-left">
