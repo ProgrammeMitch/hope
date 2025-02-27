@@ -16,6 +16,7 @@
         }
 
         .header {
+            background: linear-gradient(rgb(37 159 3), rgba(137, 238, 109, 0.774)), url("../hope/images/banner.jpg"), center/cover no-repeat;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -38,13 +39,13 @@
             text-decoration: none;
             color: black;
             font-weight: bold;
-            font-size: 14px;
+            font-size: 20px;
             margin-right: 3%;
-            margin-top: 3%;
         }
 
         .header h2 {
             font-size: 5em;
+            text-shadow: 2px 2px rgba(137, 238, 109, 0.774);
         }
 
         .hero {
@@ -380,7 +381,7 @@
             padding: 10px;
         }
 
-        @media screen and (max-width: 1150px) {
+        @media screen and (max-width: 1179px) {
             .container {
                 width: 100vw;
                 display: flex;
@@ -575,7 +576,7 @@
             <p>Join us today and start benefiting from our cooperative services.</p>
             <form id="contact-form" class="subscribe">
                 <input type="email" id="email" placeholder="Enter your email" autocomplete="off" required>
-                <button type="submit"> <span> Submit</span></button>
+                <button onclick="newEmail()" type="submit"> <span> Submit</span></button>
             </form>
         </section>
 
@@ -583,7 +584,32 @@
             <p>&copy; 2025 Cooperative. All rights reserved.</p>
         </footer>
     </div>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyA2OMVnw_qMdSg3npE2_5Dub_bVRgrkyOE",
+            authDomain: "hope-8d497.firebaseapp.com",
+            projectId: "hope-8d497",
+            storageBucket: "hope-8d497.firebasestorage.app",
+            messagingSenderId: "1022582159569",
+            appId: "1:1022582159569:web:982de7d64a63529e836df0",
+            measurementId: "G-ZER8E2D51F"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+    </script>
+
     <script>
+        let i = 0;
         let currentTeam = 0;
         function showTeam(index) {
             let teams = document.querySelectorAll(".team-card");
@@ -629,7 +655,16 @@
                 about.style.transform = 'translateY(100vh)';
             }
         });
+
+        function newEmail() {
+            firebase.database().ref("Email").set({
+                email: document.getElementById("email").value
+            })
+            i++;
+        }
     </script>
+
+   
 </body>
 
 </html>
